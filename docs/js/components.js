@@ -23,14 +23,13 @@ const components = {
           <div id="engShikiName-error" class="error"></div>
 
           </div>
-          <div
-          class="col-12 col-md-6 d-flex flex-column justify-content-center"
-        >
-          <label class="font-weight-bold" for="rarityShikiName">Phẩm chất của thức thần:</label>
-          <input type="text" id="rarityShikiName" />
-        <div id="rarityShikiName-error" class="error"></div>
-
         </div>
+        <div
+        class="col-12 d-flex flex-column justify-content-center"
+      >
+        <label class="font-weight-bold" for="rarityShikiName">Phẩm chất thức thần:</label>
+        <input type="text" id="rarityShikiName" />
+      <div id="rarityShikiName-error" class="error"></div>
         <div class="col-12 d-flex flex-column justify-content-center">
           <label class="font-weight-bold" for="skill">Skill</label>
           <div id="skill">
