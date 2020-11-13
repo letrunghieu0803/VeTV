@@ -24,6 +24,11 @@ const components = {
 
           </div>
         </div>
+        <div
+        class="col-12 d-flex flex-column justify-content-center">
+        <label class="font-weight-bold" for="rarityShikiName">Phẩm chất thức thần:</label>
+        <input type="text" id="rarityShikiName" />
+      <div id="rarity-error" class="error"></div>
         <div class="col-12 d-flex flex-column justify-content-center">
           <label class="font-weight-bold" for="skill">Skill</label>
           <div id="skill">

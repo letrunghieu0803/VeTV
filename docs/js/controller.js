@@ -23,6 +23,8 @@ const controller = {
   postNewShiki: async function () {
     const vnShikiName = document.getElementById("vnShikiName");
     const engShikiName = document.getElementById("engShikiName");
+    const rarityShikiName = document.getElementById("engShikiName");
+
     const skill1 = document.getElementById("skill1");
     const skill2 = document.getElementById("skill2");
     const skill3 = document.getElementById("skill3");
@@ -48,6 +50,11 @@ const controller = {
           newShiki.vnShikiName,
           "#vnShikiName-error",
           "Chưa nhập tên Thức thần!"
+        ),
+        utils.validate(
+          newShiki.rarityShikiName,
+          "#rarityShikiName-error",
+          "Chưa nhập phẩm Thức thần!"
         ),
         utils.validate(
           newShiki.engShikiName,
