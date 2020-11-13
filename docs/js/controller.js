@@ -11,8 +11,16 @@ const controller = {
           mainContent.className = "intro-new-feed intro2";
           let data = doc.data();
           mainContent.innerHTML = `
-            <div class="div-img">
-                    <p>${data.vnShikiName}</p> 
+            <div class="detailShiki ml-md-10">
+                    <p>- Tên thức thần: ${data.vnShikiName} (${data.engShikiName})</p>
+                    <p>- Phẩm chất thức thần: ${data.rarity} </p>
+                    <p>- Kĩ năng:</p>
+                    <p class="ml-2 ml-md-4">   + Kĩ năng 1: ${data.skill1}</p>
+                    <p class="ml-2 ml-md-4">   + Kĩ năng 2: ${data.skill2}</p>
+                    <p class="ml-2 accordionml-md-4">   + Kĩ năng 3: ${data.skill3}</p>
+                    <p>- Một số trường hợp sử dụng thức thần:  </p>
+                    <p>+${data.useOfShiki}</p>
+
                 </div>
             `;
           mainA.appendChild(mainContent);
@@ -23,7 +31,7 @@ const controller = {
   postNewShiki: async function () {
     const vnShikiName = document.getElementById("vnShikiName");
     const engShikiName = document.getElementById("engShikiName");
-    const rarityShikiName = document.getElementById("engShikiName");
+    const rarityShikiName = document.getElementById("rarityShikiName");
 
     const skill1 = document.getElementById("skill1");
     const skill2 = document.getElementById("skill2");
@@ -41,9 +49,9 @@ const controller = {
         skill2: skill2.value.trim(),
         skill3: skill3.value.trim(),
         useOfShiki: useOfShiki.value.trim(),
+        rarity: rarityShikiName.value.trim(),
         createdAt: new Date().toLocaleString(),
         compare: 1 / new Date().getTime(),
-        rate: "",
       };
       let validateResult = [
         utils.validate(
@@ -52,9 +60,9 @@ const controller = {
           "Chưa nhập tên Thức thần!"
         ),
         utils.validate(
-          newShiki.rarityShikiName,
+          newShiki.rarity,
           "#rarityShikiName-error",
-          "Chưa nhập phẩm Thức thần!"
+          "Chưa nhập phẩm chất Thức thần!"
         ),
         utils.validate(
           newShiki.engShikiName,
